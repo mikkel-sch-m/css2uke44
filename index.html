@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Min film- og serieoversikt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Min film- og serieoversikt</h1>
+    </header>
+
+    <main>
+        <!-- Skjema for å legge til filmer -->
+        <section class="add-movie">
+            <h2>Legg til en film eller serie</h2>
+            <form id="addMovieForm">
+                <label for="title">Tittel:</label>
+                <input type="text" id="title" name="title" required>
+                
+                <label for="poster">Poster URL:</label>
+                <input type="url" id="poster" name="poster" required>
+
+                <label for="rating">Rating (1-5 stjerner):</label>
+                <input type="number" id="rating" name="rating" min="1" max="5">
+
+                <label for="status">Status:</label>
+                <select id="status" name="status" required>
+                    <option value="seen">Sett</option>
+                    <option value="to-watch">Planlagt å se</option>
+                </select>
+
+                <button type="submit">Legg til</button>
+            </form>
+        </section>
+
+        <!-- Filmer og serier jeg har sett -->
+        <section class="seen">
+            <h2>Filmer og serier jeg har sett</h2>
+            <div id="seenList" class="movie-list">
+                <!-- Dynamisk innhold vil bli lagt til her -->
+            </div>
+        </section>
+
+        <!-- Filmer og serier jeg planlegger å se -->
+        <section class="to-watch">
+            <h2>Filmer og serier jeg planlegger å se</h2>
+            <div id="toWatchList" class="movie-list">
+                <!-- Dynamisk innhold vil bli lagt til her -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal for å sette rating når du flytter en film fra "Planlagt å se" til "Sett" -->
+    <div id="ratingModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Gi en rating</h2>
+            <label for="ratingInput">Rating (1-5 stjerner):</label>
+            <input type="number" id="ratingInput" min="1" max="5">
+            <button id="submitRating">Gi rating</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Min film- og serieoversikt</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
